@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Add Transaction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+
+<div class="form-container">
+
+    <h1>Add Transaction</h1>
+
+    <form method="POST">
+
+        <input
+            type="number"
+            name="amount"
+            placeholder="Enter Amount"
+            required>
+
+
+        <input
+            type="text"
+            name="category"
+            placeholder="Category"
+            required>
+
+
+        <select name="type">
+
+            <option>Income</option>
+            <option>Expense</option>
+
+        </select>
+
+
+        <button type="submit">
+
+            Save Transaction
+
+        </button>
+
+
+        <a href="/" class="back-btn">
+
+            Back
+
+        </a>
+
+    </form>
+
+</div>
+
+</body>
+</html>

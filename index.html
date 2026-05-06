@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Finance Tracker</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>💰 Finance Tracker</h1>
+
+        <a href="/add" class="add-btn">
+            + Add Transaction
+        </a>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card income">
+
+            <h3>Total Income</h3>
+            <h2>₹ {{ income }}</h2>
+
+        </div>
+
+
+        <div class="card expense">
+
+            <h3>Total Expense</h3>
+            <h2>₹ {{ expense }}</h2>
+
+        </div>
+
+
+        <div class="card balance">
+
+            <h3>Current Balance</h3>
+            <h2>₹ {{ balance }}</h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="table-box">
+
+        <table>
+
+            <tr>
+
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Type</th>
+
+            </tr>
+
+
+            {% for item in transactions %}
+            <tr>
+
+                <td>₹ {{ item.amount }}</td>
+                <td>{{ item.category }}</td>
+                <td>{{ item.type }}</td>
+
+            </tr>
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
